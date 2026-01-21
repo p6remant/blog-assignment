@@ -209,14 +209,6 @@ Route protection is implemented using Next.js middleware.
 
 ---
 
-## Developer Experience
-
-- ESLint with Next.js configuration
-- Prettier for consistent formatting
-- Husky and lint‑staged for pre‑commit checks
-- Clean and scalable folder structure
-- Strong TypeScript typing throughout the project
-
 ### Available Scripts
 
 - pnpm dev – start the development server
@@ -225,5 +217,3 @@ Route protection is implemented using Next.js middleware.
 - pnpm lint – run ESLint
 - pnpm format – format code with Prettier
 - pnpm format:check – check formatting
-
----
