@@ -15,7 +15,7 @@
 
 ---
 
-## Project Structure (High Level)
+## Project Structure
 
 ```
 src/
@@ -28,7 +28,7 @@ src/
 ├── validations/      # Zod schemas
 ├── providers/        # Application-wide providers
 ├── utils/            # Helper utilities
-└── proxy.ts     # Route protection
+└── proxy.ts          # Route protection
 ```
 
 ## Getting Started
