@@ -189,7 +189,7 @@ Route protection is implemented using Next.js middleware.
 
 ### Protected Routes
 
-- /
+- /dashnoard
 - /posts/\*
 
 ### Redirect Rules
