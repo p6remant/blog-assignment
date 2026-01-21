@@ -1,7 +1,5 @@
 # Blog
 
----
-
 ## What This Project Includes
 
 - Mocked authentication (login and registration)
