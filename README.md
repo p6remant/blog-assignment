@@ -192,11 +192,6 @@ Route protection is implemented using Next.js middleware.
 - /dashnoard
 - /posts/\*
 
-### Redirect Rules
-
-- Unauthenticated users accessing protected routes are redirected to the login page
-- Authenticated users accessing auth pages are redirected to the dashboard
-
 ---
 
 ## Error Handling
