@@ -12,13 +12,21 @@ export const useAuth = () => {
   const { user, token, isAuthenticated, login, logout, setUser } =
     useAuthStore();
 
+  const getRedirectUrl = () => {
+    try {
+      return searchParams?.get("redirect") || "/dashboard";
+    } catch {
+      return "/dashboard";
+    }
+  };
+
   const handleLogin = async (payload: LoginPayload) => {
     try {
       const response = await authService.login(payload);
       login(response.user, response.token);
       toast.success("Login successful!");
-      const redirect = searchParams.get("redirect");
-      router.push(redirect || "/dashboard");
+      const redirect = getRedirectUrl();
+      router.push(redirect);
       return { success: true };
     } catch (error) {
       const errorMessage =
@@ -36,8 +44,8 @@ export const useAuth = () => {
       const response = await authService.register(payload);
       login(response.user, response.token);
       toast.success("Registration successful!");
-      const redirect = searchParams.get("redirect");
-      router.push(redirect || "/dashboard");
+      const redirect = getRedirectUrl();
+      router.push(redirect);
       return { success: true };
     } catch (error) {
       const errorMessage =

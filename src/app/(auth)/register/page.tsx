@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useAuth } from "@/hooks/useAuth";
@@ -14,7 +14,7 @@ import {
 import { UserPlus } from "lucide-react";
 import Link from "next/link";
 
-export default function RegisterPage() {
+function RegisterForm() {
   const [error, setError] = useState("");
   const { register: registerUser } = useAuth();
 
@@ -95,5 +95,13 @@ export default function RegisterPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function RegisterPage() {
+  return (
+    <Suspense fallback={null}>
+      <RegisterForm />
+    </Suspense>
   );
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense, useState } from "react";
 import { usePosts, useDeletePost } from "@/hooks/usePosts";
 import { PostCard } from "@/components/posts/PostCard";
 import { Loader } from "@/components/common/Loader";
@@ -10,9 +11,8 @@ import { useAuth } from "@/hooks/useAuth";
 import { Plus, LogOut } from "lucide-react";
 import toast from "react-hot-toast";
 import Link from "next/link";
-import { useState } from "react";
 
-export default function DashboardPage() {
+function DashboardContent() {
   const { data: posts, isLoading, error, refetch } = usePosts();
   const deletePost = useDeletePost();
   const { logout, user } = useAuth();
@@ -132,5 +132,13 @@ export default function DashboardPage() {
         isLoading={deletingId !== null}
       />
     </div>
+  );
+}
+
+export default function DashboardPage() {
+  return (
+    <Suspense fallback={null}>
+      <DashboardContent />
+    </Suspense>
   );
 }
